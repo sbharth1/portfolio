@@ -1,9 +1,8 @@
-
-
-export default function portfolio(){
-  return(
-    <>
-     <h1 className="bg-green-700 text-2xl text-red-600"> this is portfolio</h1>
-    </>
-  )
+export default function Home() {
+  return (<>
+  
+  <div>hello world</div>
+  
+  </>);
 }
+   
