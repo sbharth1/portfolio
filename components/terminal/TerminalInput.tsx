@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState,useRef } from "react"
 
 type Props = {
   onCommand: (command: string) => void
@@ -9,6 +9,7 @@ type Props = {
 export default function TerminalInput({ onCommand }: Props) {
 
   const [value, setValue] = useState("")
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
 
@@ -23,6 +24,10 @@ export default function TerminalInput({ onCommand }: Props) {
 
   }
 
+  const focusInput = () => {
+    inputRef.current?.focus();
+  }
+
   return (
 
     <div className="flex items-center mt-2">
@@ -30,6 +35,7 @@ export default function TerminalInput({ onCommand }: Props) {
       <span className="text-green-400 mr-2">$</span>
 
       <input
+        ref={inputRef}
         autoFocus
         value={value}
         onChange={(e) => setValue(e.target.value)}

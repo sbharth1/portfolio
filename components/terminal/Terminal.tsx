@@ -31,7 +31,7 @@ export default function Terminal() {
 
   return (
 
-    <div className="w-full max-w-5xl h-[70vh] flex flex-col bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl shadow-2xl">
+    <div className="w-full min-h-screen flex flex-col bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-2xl shadow-2xl">
 
       {/* Terminal Header */}
 
