@@ -7,7 +7,8 @@ type Props = {
 export default function TerminalOutput({ history }: Props) {
 
   return (
-    <div className="space-y-2">
+
+    <div className="space-y-3">
 
       {history.map((item, index) => (
 
@@ -15,10 +16,10 @@ export default function TerminalOutput({ history }: Props) {
 
           <div>
             <span className="text-green-400">$ </span>
-            {item.command}
+            <span className="text-white">{item.command}</span>
           </div>
 
-          <div className="text-gray-300 whitespace-pre-wrap">
+          <div className="text-zinc-400 whitespace-pre-wrap ml-4">
             {item.output}
           </div>
 
@@ -27,5 +28,7 @@ export default function TerminalOutput({ history }: Props) {
       ))}
 
     </div>
+
   )
+
 }
