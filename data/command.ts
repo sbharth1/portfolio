@@ -3,24 +3,17 @@ import { ReactNode } from "react";
 export const commands: Record<string, ReactNode> = {
 
   help: `
-Available commands:
-
-about       who am i
-skills      tech stack
-projects    my work
-contact     contact info
-github      open github
-linkedin    open linkedin
-clear       clear terminal
+about      who am i
+skills     tech stack
+projects   my projects
+contact    reach me
+clear      clear terminal
 `,
 
   about: `
-Hi 👋
-I'm Siddharth Baghel
-
+Hi I'm Siddharth
 Fullstack Developer
-React • Next.js • Node.js • Express
-Learning Web3 & Blockchain
+React • Next.js • Node.js
 `,
 
   skills: `
@@ -28,9 +21,7 @@ React
 Next.js
 Node.js
 Express
-PostgreSQL
 Docker
-Web3
 `,
 
   projects: `
@@ -40,7 +31,8 @@ Web3
 `,
 
   contact: `
-Email: baghelsiddharth942@gmail.com
-Location: India
+Email: siddharth@email.com
+GitHub: github.com/siddharth
 `
+
 }
