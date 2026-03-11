@@ -2,28 +2,22 @@ export default function Header() {
   return (
     <div className="bg-black w-screen overflow-x-hidden font-mono p-4">
       <div className=" mx-auto text-center w-screen">
-<pre className=" mb-3 font-mono whitespace-pre text-sm ">
-{`
+        <pre className=" mb-3 font-mono whitespace-pre text-sm ">
+          {`
   _________.__    .___  .___.__                   __  .__     
  ╱   _____╱│__│ __│ _╱__│ _╱│  │__ _____ ________╱  │_│  │__  
  ╲_____  ╲ │  │╱ __ │╱ __ │ │  │  ╲╲__  ╲╲_  __ ╲   __╲  │  ╲ 
  ╱        ╲│  ╱ ╱_╱ ╱ ╱_╱ │ │   Y  ╲╱ __ ╲│  │ ╲╱│  │ │   Y  ╲
 ╱_______  ╱│__╲____ ╲____ │ │___│  (____  ╱__│   │__│ │___│  ╱
         ╲╱         ╲╱    ╲╱      ╲╱     ╲╱                 ╲╱ 
+        
 `}
-</pre>
-        <div className=" text-[#c9d1d9] text-left">
-          <p>Welcome to my portfolio!</p>
-          <p>
-            Type <span className="text-[#f0883e]">help</span> to get a list of
-            available commands.
-          </p>
-          <p>
-            Use <span className="text-[#f0883e]">↑</span> and{" "}
-            <span className="text-[#f0883e]">↓</span> to navigate command
-            history.
-          </p>
-        </div>
+        </pre>
+        <pre className="mb-3 font-mono whitespace-pre text-sm">
+          {String.raw`
+
+`}
+        </pre>
       </div>
     </div>
   );
