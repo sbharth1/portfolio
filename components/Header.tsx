@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="bg-black w-screen overflow-x-hidden font-mono p-4">
+    <div className="bg-[#0d1117] w-screen overflow-x-hidden font-mono p-4">
       <div className=" mx-auto text-center w-screen">
         <pre className=" mb-3 font-mono whitespace-pre text-sm ">
           {`
