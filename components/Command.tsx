@@ -2,7 +2,6 @@
 
 import { ReactNode, useRef, useState } from "react";
 import { commands } from "@/utils/command";
-import { div } from "framer-motion/client";
 
 type HistoryItem = {
   command: string;
@@ -15,7 +14,7 @@ export default function Command() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "enter") {
+    if (e.key === "Enter") {
       const cmd = input.trim().toLocaleLowerCase();
 
       if (cmd === "clear") {
@@ -38,10 +37,16 @@ export default function Command() {
           {history.map((item, i) => (
             <div key={i}>
               <div className="flex flex-row mb-0.5">
-                <div className="text-yellow-500 font-bold">
-                  visitor@siddharth~$
+                <div
+                  className="text-yellow-500 font-bold"
+                  style={{ paddingLeft: "5px" }}
+                >
+                  visitor@sid~$
                 </div>
-                <div className="ml-2 font-mono text-[#c9d1d9]">
+                <div
+                  style={{ paddingLeft: "10px" }}
+                  className="ml-2 font-mono text-[#c9d1d9]"
+                >
                   {item.command}
                 </div>
               </div>
@@ -52,16 +57,22 @@ export default function Command() {
           ))}
         </div>
         <div className="flex flex-row relative">
-          <div className="text-yellow-500 font-bold"style={{paddingLeft:"5px"}}>visitor@siddharth~$</div>
+          <div
+            className="text-yellow-500 font-bold"
+            style={{ paddingLeft: "5px" }}
+          >
+            visitor@sid~$
+          </div>
           <div className="relative flex-1">
             <input
               className="bg-transparent outline-none border-none font-mono text-[#c9d1d9] w-full"
-              style={{paddingLeft:"10px"}}
+              style={{ paddingLeft: "10px" }}
               type="text"
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               autoFocus
+              onKeyDown={handleCommand}
             />
           </div>
         </div>
