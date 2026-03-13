@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode, useState } from "react";
-import { commands } from "@/data/command";
+import { ReactNode, useRef, useState } from "react";
+import { commands } from "@/utils/command";
 
 type HistoryItem = {
   command: string;
@@ -11,6 +11,7 @@ type HistoryItem = {
 export default function Command() {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<HistoryItem[]>([]);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "enter") {
