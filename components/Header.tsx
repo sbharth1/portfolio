@@ -13,11 +13,12 @@ export default function Header() {
         
 `}
         </pre>
-        <pre className="mb-3 font-mono whitespace-pre text-sm">
-          {String.raw`
 
-`}
-        </pre>
+        <div className="text-center">
+          <div className="text-white font-KG">
+            Type <span className="text-yellow-400">help</span> to get a list of available commands.
+          </div>
+        </div>
       </div>
     </div>
   );

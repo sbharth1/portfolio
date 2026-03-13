@@ -1,26 +1,47 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { ReactNode, useState } from "react";
+import { commands } from "@/data/command";
+
+type HistoryItem = {
+  command: string;
+  output: ReactNode;
+};
 
 export default function Command() {
-  const [input, setInput] = useState("")
-  const [history, setHistory] = useState<string[]>([])
+  const [input, setInput] = useState("");
+  const [history, setHistory] = useState<HistoryItem[]>([]);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      setHistory([...history, input])
-      setInput("")
+    if (e.key === "enter") {
+      const cmd = input.trim().toLocaleLowerCase();
+
+      if (cmd === "clear") {
+        setHistory([]);
+        setInput("");
+        return;
+      }
+
+      const output = commands[cmd] || "command not found";
+
+      setHistory([...history, { command: cmd, output }]);
+      setInput("");
     }
-  }
+  };
 
   return (
     <div className="mt-6 font-mono text-green-400">
-
       <div className="space-y-2">
-        {history.map((cmd, i) => (
+        {history.map((item, i) => (
           <div key={i}>
-            <span className="text-green-500">$ </span>
-            {cmd}
+            <div>
+              {" "}
+              <span className="text-green-500">$</span>
+            </div>
+
+            <div className="ml-4 text-gray-300 whitespace-pre-wrap">
+              {item.output}
+            </div>
           </div>
         ))}
       </div>
@@ -36,7 +57,6 @@ export default function Command() {
           autoFocus
         />
       </div>
-
     </div>
-  )
+  );
 }
