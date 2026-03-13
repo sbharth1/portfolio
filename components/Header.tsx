@@ -13,11 +13,13 @@ export default function Header() {
         
 `}
         </pre>
-
-        <div className="text-center">
-          <div className="text-white font-KG">
+      </div>
+       <div className="text-center">
+        <div className="text-white font-KG">
+          <p>Welcome to my portfolio!</p>
+          <p>
             Type <span className="text-yellow-400">help</span> to get a list of available commands.
-          </div>
+          </p>
         </div>
       </div>
     </div>
