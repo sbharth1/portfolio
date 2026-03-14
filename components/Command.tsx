@@ -23,7 +23,7 @@ export default function Command() {
         return;
       }
 
-      const output = commands[cmd] || ":- command not found";
+      const output = commands[cmd] || ` command not found :- ${input}`;
 
       setHistory([...history, { command: cmd, output }]);
       setInput("");
@@ -32,19 +32,19 @@ export default function Command() {
 
   return (
     <>
-      <div className="h-full w-full overflow-x-hidden bg-[#0d1117] text-[#58a6ff] font-mono p-4">
+      <div className="h-full w-full overflow-y-hidden  bg-[#0d1117] text-[#58a6ff] font-mono p-4">
         <div className="max-w-3xl mx-auto">
           {history.map((item, i) => (
             <div key={i}>
               <div className="flex flex-row mb-0.5">
                 <div
                   className="text-[#CBD5E1] font-bold"
-                  style={{ paddingLeft: "5px" }}
+                  style={{ paddingLeft: "16px" }}
                 >
                 <span className="text-yellow-500">visitor</span>@<span className="text-[#05CE91]">terminal.sid</span>:~$
                 </div>
                 <div
-                  style={{ paddingLeft: "10px" }}
+                  style={{ paddingLeft: "16px" }}
                   className="ml-2 font-mono text-[#c9d1d9]"
                 >
                   {item.command}
@@ -52,7 +52,7 @@ export default function Command() {
               </div>
               <div
                 className="font-mono text-left ml-6 mb-3 text-[#c9d1d9]"
-                style={{ paddingLeft: "10px" }}
+                style={{ paddingLeft: "16px" }}
               >
                 {item.output}
               </div>
@@ -62,7 +62,7 @@ export default function Command() {
         <div className="flex flex-row relative">
           <div
             className="text-[#CBD5E1] font-bold"
-            style={{ paddingLeft: "5px" }}
+            style={{ paddingLeft: "16px" }}
           >
             <span className="text-yellow-500">visitor</span>@<span className="text-[#05CE91]">terminal.sid</span>:~$
           </div>
