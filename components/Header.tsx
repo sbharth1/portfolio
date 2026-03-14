@@ -1,7 +1,7 @@
 export default function Header() {
   return (
-    <div className="bg-[#0d1117] w-screen overflow-x-hidden font-mono p-4">
-      <div className=" mx-auto text-center w-screen">
+    <div className="bg-[#0d1117] w-full overflow-x-hidden font-mono p-4">
+      <div className="  text-center ">
         <pre className=" mb-3 font-mono whitespace-pre text-sm ">
           {`
   _________.__    .___  .___.__                   __  .__     
@@ -15,10 +15,10 @@ export default function Header() {
         </pre>
       </div>
        <div className="text-center">
-        <div className="text-white font-KG">
+        <div className="text-[#CBD5E1] font-KG">
           <p>Welcome to my portfolio!</p>
           <p>
-            Type <span className="text-yellow-400">help</span> to get a list of available commands.
+            Type <span className="text-[#05CE91]">`help`</span> to get a list of available commands.
           </p>
         </div>
       </div>
