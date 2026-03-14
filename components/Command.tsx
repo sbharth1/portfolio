@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState, RefObject } from "react";
 import { commands } from "@/utils/command";
 
 type HistoryItem = {
@@ -8,10 +8,23 @@ type HistoryItem = {
   output: ReactNode;
 };
 
-export default function Command() {
+interface CommandProps {
+  terminalRef: RefObject<HTMLDivElement | null>;
+}
+
+export default function Command({ terminalRef }: CommandProps) {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (terminalRef.current) {
+      terminalRef.current.scrollTo({
+        top: terminalRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [history, terminalRef]);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -32,7 +45,7 @@ export default function Command() {
 
   return (
     <>
-      <div className="h-full w-full overflow-y-hidden  bg-[#0d1117] text-[#58a6ff] font-mono p-4">
+      <div className="h-full w-full bg-[#0d1117] text-[#58a6ff] font-mono p-4">
         <div className="max-w-3xl mx-auto">
           {history.map((item, i) => (
             <div key={i}>
@@ -41,7 +54,8 @@ export default function Command() {
                   className="text-[#CBD5E1] font-bold"
                   style={{ paddingLeft: "16px" }}
                 >
-                <span className="text-yellow-500">visitor</span>@<span className="text-[#05CE91]">terminal.sid</span>:~$
+                  <span className="text-yellow-500">visitor</span>@
+                  <span className="text-[#05CE91]">terminal.sid</span>:~$
                 </div>
                 <div
                   style={{ paddingLeft: "16px" }}
@@ -64,7 +78,8 @@ export default function Command() {
             className="text-[#CBD5E1] font-bold"
             style={{ paddingLeft: "16px" }}
           >
-            <span className="text-yellow-500">visitor</span>@<span className="text-[#05CE91]">terminal.sid</span>:~$
+            <span className="text-yellow-500">visitor</span>@
+            <span className="text-[#05CE91]">terminal.sid</span>:~$
           </div>
           <div className="relative flex-1">
             <input
@@ -75,6 +90,7 @@ export default function Command() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               autoFocus
+              id="command-input"
               onKeyDown={handleCommand}
             />
           </div>

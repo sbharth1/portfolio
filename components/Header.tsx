@@ -1,7 +1,9 @@
+"use client";
+
 export default function Header() {
   return (
-    <div className="bg-[#0d1117] w-full overflow-x-hidden font-mono p-4">
-      <div className="  text-center ">
+    <div className="bg-[#0d1117] w-full  font-mono p-4">
+      <div className="w-full text-center ">
         <pre className=" mb-3 font-mono whitespace-pre text-sm ">
           {`
   _________.__    .___  .___.__                   __  .__     
