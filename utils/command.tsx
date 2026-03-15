@@ -97,7 +97,7 @@ export const commands: Record<string, ReactNode> = {
 
   resume: (
     <div className="mt-2">
-      <a href="/resume.pdf" target="_blank" className="text-[#05CE91] underline hover:text-green-400">
+      <a href="https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/view?usp=drive_link" target="_blank" className="text-[#05CE91] underline hover:text-green-400">
         📄 Click here to view or download my resume.
       </a>
     </div>
