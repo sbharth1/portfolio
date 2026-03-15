@@ -59,13 +59,13 @@ export default function Command({ terminalRef }: CommandProps) {
                 </div>
                 <div
                   style={{ paddingLeft: "16px" }}
-                  className="ml-2 font-mono text-[#c9d1d9]"
+                  className="ml-2 mb-2 font-mono text-[#c9d1d9]"
                 >
                   {item.command}
                 </div>
               </div>
               <div
-                className="font-mono text-left ml-6 mb-3 text-[#c9d1d9]"
+                className="font-mono text-left ml-6 mb-4 text-[#c9d1d9]"
                 style={{ paddingLeft: "16px" }}
               >
                 {item.output}

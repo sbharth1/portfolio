@@ -32,21 +32,34 @@ export const commands: Record<string, ReactNode> = {
 
   about: (
     <div className="space-y-2 mt-2 text-[#CBD5E1]">
-      <p>👋 Hi, I&apos;m <span className="text-[#05CE91] font-bold">Siddharth</span>.</p>
       <p>
-        I am a Full Stack Developer passionate about building robust web applications.
-        I specialize in the modern JavaScript ecosystem, focusing on scalable architectures,
-        clean code, and seamless user experiences.
+        <span className="font-bold">
+          Hi, my name is Siddharth!
+        </span>
+      </p>
+      <p>
+        I&apos;m a full-stack developer. I am
+        passionate about writing codes and developing web applications to solve
+        real-life challenges.
       </p>
     </div>
   ),
 
   skills: (
     <div className="space-y-2 mt-2 text-[#CBD5E1]">
-      <ListItem label="Frontend" value="React, Next.js, TypeScript, Tailwind CSS, shadcn/ui" />
-      <ListItem label="Backend" value="Node.js, Express, Python" />
-      <ListItem label="Database" value="PostgreSQL, MySQL, MongoDB, Drizzle ORM" />
-      <ListItem label="Tools" value="Git, Docker, Linux" />
+      <ListItem label="Languages" value="TypeScript, JavaScript, C++" />
+      <ListItem
+        label="Frameworks"
+        value="React.js, Next.js, Express.js, React Native"
+      />
+      <ListItem
+        label="Tools"
+        value="Git, MySQL, Redis, MongoDB, PostgreSQL, Kafka"
+      />
+      <ListItem
+        label="DevOps"
+        value="Docker, Kubernetes, AWS ECS, AWS EC2, AWS Lambda"
+      />
     </div>
   ),
 
@@ -55,20 +68,32 @@ export const commands: Record<string, ReactNode> = {
       <div>
         <div className="text-[#05CE91] font-bold flex items-center gap-2">
           🛒 E-commerce Platform
-          <a href="#" className="text-blue-400 text-sm underline hover:text-blue-300">GitHub</a>
+          <a
+            href="#"
+            className="text-blue-400 text-sm underline hover:text-blue-300"
+          >
+            GitHub
+          </a>
         </div>
         <div className="text-sm mt-1">
-          A full-stack e-commerce site built with React, Node.js, PostgreSQL, Drizzle ORM, and shadcn/ui.
+          A full-stack e-commerce site built with React, Node.js, PostgreSQL,
+          Drizzle ORM, and shadcn/ui.
         </div>
       </div>
-      
+
       <div>
         <div className="text-[#05CE91] font-bold flex items-center gap-2">
           🤖 AI Chatbot Application
-          <a href="#" className="text-blue-400 text-sm underline hover:text-blue-300">GitHub</a>
+          <a
+            href="#"
+            className="text-blue-400 text-sm underline hover:text-blue-300"
+          >
+            GitHub
+          </a>
         </div>
         <div className="text-sm mt-1">
-          A chat interface featuring a Next.js UI, Python backend, and integration with generative AI models.
+          A chat interface featuring a Next.js UI, Python backend, and
+          integration with generative AI models.
         </div>
       </div>
     </div>
@@ -76,36 +101,67 @@ export const commands: Record<string, ReactNode> = {
 
   contact: (
     <div className="space-y-2 mt-2 text-[#CBD5E1]">
-      <ListItem 
-        label="Email" 
-        value={<a href="mailto:baghelsiddhath942@gmail.com" className="text-blue-400 underline hover:text-blue-300">baghelsiddhath942@email.com</a>} 
+      <ListItem
+        label="Email"
+        value={
+          <a
+            href="mailto:baghelsiddhath942@gmail.com"
+            className="text-blue-400 underline hover:text-blue-300"
+          >
+            baghelsiddhath942@email.com
+          </a>
+        }
       />
-      <ListItem 
-        label="GitHub" 
-        value={<a href="https://github.com/sbharth1" target="_blank" className="text-blue-400 underline hover:text-blue-300">github.com/sbharth1</a>} 
+      <ListItem
+        label="GitHub"
+        value={
+          <a
+            href="https://github.com/sbharth1"
+            target="_blank"
+            className="text-blue-400 underline hover:text-blue-300"
+          >
+            github.com/sbharth1
+          </a>
+        }
       />
-      <ListItem 
-        label="LinkedIn" 
-        value={<a href="https://www.linkedin.com/in/siddharth-baghel-122a23273/" target="_blank" className="text-blue-400 underline hover:text-blue-300">linkedin.com/in/siddharth</a>} 
+      <ListItem
+        label="LinkedIn"
+        value={
+          <a
+            href="https://www.linkedin.com/in/siddharth-baghel-122a23273/"
+            target="_blank"
+            className="text-blue-400 underline hover:text-blue-300"
+          >
+            linkedin.com/in/siddharth
+          </a>
+        }
       />
-       <ListItem 
-        label="Twitter" 
-        value={<a href="https://x.com/sbharth01" target="_blank" className="text-blue-400 underline hover:text-blue-300">twitter.com/siddharth</a>} 
+      <ListItem
+        label="Twitter"
+        value={
+          <a
+            href="https://x.com/sbharth01"
+            target="_blank"
+            className="text-blue-400 underline hover:text-blue-300"
+          >
+            twitter.com/siddharth
+          </a>
+        }
       />
     </div>
   ),
 
   resume: (
     <div className="mt-2">
-      <a href="https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/view?usp=drive_link" target="_blank" className="text-[#05CE91] underline hover:text-green-400">
+      <a
+        href="https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/view?usp=drive_link"
+        target="_blank"
+        className="text-[#05CE91] underline hover:text-green-400"
+      >
         📄 Click here to view or download my resume.
       </a>
     </div>
   ),
 
-  whoami: (
-    <div className="mt-2 text-[#CBD5E1]">
-      visitor
-    </div>
-  )
+  whoami: <div className="mt-2 text-[#CBD5E1]">visitor</div>,
 };
