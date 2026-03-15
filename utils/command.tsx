@@ -18,7 +18,7 @@ const ListItem = ({ label, value }: { label: string; value: ReactNode }) => (
 
 export const commands: Record<string, ReactNode> = {
   help: (
-    <div className="space-y-1 mt-2">
+    <div className="space-y-1 my-6">
       <div className="text-yellow-400 mb-2 font-bold">Available commands:</div>
       <HelpItem cmd="about" desc="Read a little bit about me" />
       <HelpItem cmd="clear" desc="Clear the terminal output" />
@@ -31,22 +31,19 @@ export const commands: Record<string, ReactNode> = {
   ),
 
   about: (
-    <div className="space-y-2 mt-2 text-[#CBD5E1]">
+    <div className="space-y-2 my-6 text-[#CBD5E1]">
       <p>
-        <span className="font-bold">
-          Hi, my name is Siddharth!
-        </span>
+        <span className="font-bold">Hi, my name is Siddharth!</span>
       </p>
       <p>
-        I&apos;m a full-stack developer. I am
-        passionate about writing codes and developing web applications to solve
-        real-life challenges.
+        I&apos;m a full-stack developer. I am passionate about writing codes and
+        developing web applications to solve real-life challenges.
       </p>
     </div>
   ),
 
   skills: (
-    <div className="space-y-2 mt-2 text-[#CBD5E1]">
+    <div className="space-y-2 my-6 text-[#CBD5E1]">
       <ListItem label="Languages" value="TypeScript, JavaScript, C++" />
       <ListItem
         label="Frameworks"
@@ -64,7 +61,7 @@ export const commands: Record<string, ReactNode> = {
   ),
 
   projects: (
-    <div className="space-y-4 mt-2 text-[#CBD5E1]">
+    <div className="space-y-4 my-6 text-[#CBD5E1]">
       <div>
         <div className="text-[#05CE91] font-bold flex items-center gap-2">
           🛒 E-commerce Platform
@@ -100,7 +97,7 @@ export const commands: Record<string, ReactNode> = {
   ),
 
   contact: (
-    <div className="space-y-2 mt-2 text-[#CBD5E1]">
+    <div className="space-y-2 my-6 text-[#CBD5E1]">
       <ListItem
         label="Email"
         value={
@@ -108,7 +105,7 @@ export const commands: Record<string, ReactNode> = {
             href="mailto:baghelsiddhath942@gmail.com"
             className="text-blue-400 underline hover:text-blue-300"
           >
-            baghelsiddhath942@email.com
+            baghelsiddhath942@gmail.com
           </a>
         }
       />
@@ -118,6 +115,7 @@ export const commands: Record<string, ReactNode> = {
           <a
             href="https://github.com/sbharth1"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-400 underline hover:text-blue-300"
           >
             github.com/sbharth1
@@ -130,6 +128,7 @@ export const commands: Record<string, ReactNode> = {
           <a
             href="https://www.linkedin.com/in/siddharth-baghel-122a23273/"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-400 underline hover:text-blue-300"
           >
             linkedin.com/in/siddharth
@@ -142,6 +141,7 @@ export const commands: Record<string, ReactNode> = {
           <a
             href="https://x.com/sbharth01"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-400 underline hover:text-blue-300"
           >
             twitter.com/siddharth
@@ -151,17 +151,18 @@ export const commands: Record<string, ReactNode> = {
     </div>
   ),
 
-  resume: (
-    <div className="mt-2">
-      <a
-        href="https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/view?usp=drive_link"
-        target="_blank"
-        className="text-[#05CE91] underline hover:text-green-400"
-      >
-        📄 Click here to view or download my resume.
-      </a>
-    </div>
-  ),
+  // resume: (
+  //   <div className="my-6">
+  //     <a
+  //       href="https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/preview"
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //       className="text-[#05CE91] underline hover:text-green-400"
+  //     >
+  //       📄 Click here to view or download my resume.
+  //     </a>
+  //   </div>
+  // ),
 
-  whoami: <div className="mt-2 text-[#CBD5E1]">visitor</div>,
+  whoami: <div className="my-6 text-[#CBD5E1]">visitor</div>,
 };

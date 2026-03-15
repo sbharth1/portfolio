@@ -36,6 +36,31 @@ export default function Command({ terminalRef }: CommandProps) {
         return;
       }
 
+      if (cmd === "resume") {
+        window.open(
+          "https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/preview",
+          "_blank",
+        );
+
+        setHistory([
+          ...history,
+          {
+            command: cmd,
+            output: (
+              <div className="my-6 text-[#05CE91]">
+                Opening resume in a new tab...
+              </div>
+            ),
+          },
+        ]);
+        setInput("");
+        setTimeout(() => {
+          inputRef.current?.focus();
+        }, 0);
+        return;
+      }
+      
+
       const output = commands[cmd] || ` command not found :- ${input}`;
 
       setHistory([...history, { command: cmd, output }]);
