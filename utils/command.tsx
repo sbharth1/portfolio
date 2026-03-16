@@ -151,18 +151,6 @@ export const commands: Record<string, ReactNode> = {
     </div>
   ),
 
-  // resume: (
-  //   <div className="my-6">
-  //     <a
-  //       href="https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/preview"
-  //       target="_blank"
-  //       rel="noopener noreferrer"
-  //       className="text-[#05CE91] underline hover:text-green-400"
-  //     >
-  //       📄 Click here to view or download my resume.
-  //     </a>
-  //   </div>
-  // ),
 
   whoami: <div className="my-6 text-[#CBD5E1]">visitor</div>,
 };
