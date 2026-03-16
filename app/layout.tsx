@@ -16,9 +16,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Product Designer & Frontend Developer",
-  description:
-    "A clean, modern portfolio featuring selected work, skills, and ways to get in touch.",
+  title: "Siddharth's Intro",
 };
 
 export default function RootLayout({
