@@ -3,14 +3,14 @@
 import { ReactNode } from "react";
 
 const HelpItem = ({ cmd, desc }: { cmd: string; desc: string }) => (
-  <div className="grid grid-cols-[100px_1fr] gap-4 ">
+  <div className="grid grid-cols-[100px_1fr] gap-4" style={{marginTop:6,marginBottom:2}}>
     <span className="text-[#05CE91] font-bold ">{cmd}</span>
     <span className="text-[#CBD5E1] ">— {desc}</span>
   </div>
 );
 
 const ListItem = ({ label, value }: { label: string; value: ReactNode }) => (
-  <div className="grid grid-cols-[120px_1fr] gap-4">
+  <div className="grid grid-cols-[120px_1fr] gap-4" style={{marginTop:6,marginBottom:4}}>
     <span className="text-yellow-400 font-bold">{label}:</span>
     <span className="text-[#CBD5E1]">{value}</span>
   </div>
@@ -18,8 +18,8 @@ const ListItem = ({ label, value }: { label: string; value: ReactNode }) => (
 
 export const commands: Record<string, ReactNode> = {
   help: (
-    <div className="space-y-1 my-6">
-      <div className="text-yellow-400 mb-6 font-bold">Available commands:</div>
+    <div className="space-y-4 my-6">
+      <div className="text-yellow-400 text mb-6 font-bold">Available commands:</div>
       <HelpItem cmd="about" desc="Read a little bit about me" />
       <HelpItem cmd="clear" desc="Clear the terminal output" />
       <HelpItem cmd="contact" desc="Get my email and social links" />
@@ -27,11 +27,12 @@ export const commands: Record<string, ReactNode> = {
       <HelpItem cmd="resume" desc="Download my resume (PDF)" />
       <HelpItem cmd="skills" desc="List of my technical skills and stack" />
       <HelpItem cmd="whoami" desc="Print the current user" />
+      <p className="mt-3">Tab =&gt; autocompletes the command.</p>
     </div>
   ),
 
   about: (
-    <div className="space-y-2 my-6 text-[#CBD5E1]">
+    <div className="space-y-4 my-6 text-[#CBD5E1]">
       <p>
         <span className="font-bold">Hi, my name is Siddharth!</span>
       </p>
@@ -43,7 +44,7 @@ export const commands: Record<string, ReactNode> = {
   ),
 
   skills: (
-    <div className="space-y-2 my-6 text-[#CBD5E1]">
+    <div className="space-y-4 my-6 text-[#CBD5E1]">
       <ListItem label="Languages" value="TypeScript, JavaScript, C++" />
       <ListItem
         label="Frameworks"
@@ -96,7 +97,7 @@ export const commands: Record<string, ReactNode> = {
   ),
 
   contact: (
-    <div className="space-y-2 my-6 text-[#CBD5E1]">
+    <div className="space-y-4 my-6 text-[#CBD5E1]">
       <ListItem
         label="Email"
         value={
