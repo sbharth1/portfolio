@@ -1,0 +1,33 @@
+name: Deploy Portfolio to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into EC2 and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/portfolio
+            
+            # Pull the fresh code
+            git pull origin main
+            
+            # Rebuild the Docker image with pnpm
+            sudo docker build -t terminal-portfolio .
+            
+            # Stop and remove the old container (the '|| true' prevents errors if it's already stopped)
+            sudo docker rm -rf portfolio || true
+            
+            # Launch the new container on Port 3000 behind your Nginx SSL shield
+            sudo docker run -d -p 3000:3000 --name portfolio --restart unless-stopped terminal-portfolio
