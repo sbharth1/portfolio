@@ -17,6 +17,16 @@ export default function Command({ terminalRef }: CommandProps) {
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const availableCommands = [
+    "help",
+    "about",
+    "projects",
+    "contact",
+    "clear",
+    "resume",
+    "whoami"
+  ];
+
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTo({
@@ -27,6 +37,20 @@ export default function Command({ terminalRef }: CommandProps) {
   }, [history, terminalRef]);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Tab") {
+      e.preventDefault();
+
+      if (!input) return;
+
+      const matchedCommand = availableCommands.find((cmd) => 
+        cmd.startsWith(input.toLowerCase())
+      );
+
+      if (matchedCommand) {
+        setInput(matchedCommand);
+      }
+    }
+
     if (e.key === "Enter") {
       const cmd = input.trim().toLocaleLowerCase();
 
@@ -59,7 +83,6 @@ export default function Command({ terminalRef }: CommandProps) {
         }, 0);
         return;
       }
-      
 
       const output = commands[cmd] || ` command not found :- ${input}`;
 
@@ -116,7 +139,7 @@ export default function Command({ terminalRef }: CommandProps) {
               onChange={(e) => setInput(e.target.value)}
               autoFocus
               id="command-input"
-              onKeyDown={handleCommand}
+              onKeyDownCapture={handleCommand}
             />
           </div>
         </div>
