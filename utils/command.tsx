@@ -151,7 +151,7 @@ export const commands: Record<string, ReactNode> = {
     </div>
   ),
 
-  // resume
+  // resume ---
 
   whoami: <div className="my-6 text-[#CBD5E1]">visitor</div>,
 };
