@@ -15,7 +15,7 @@ body {
   overflow: hidden;
   height: 100%;
   font-family: "IBM Plex Mono", monospace;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
 
 .custom-scroll::-webkit-scrollbar {

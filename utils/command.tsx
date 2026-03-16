@@ -93,6 +93,22 @@ export const commands: Record<string, ReactNode> = {
           integration with generative AI models.
         </div>
       </div>
+
+      <div>
+        <div className="text-[#05CE91] font-bold flex items-center gap-2">
+           A Notes App 
+          <a
+            href="https://github.com/sbharth1/Notes-V2.git"
+            className="text-blue-400 text-sm underline hover:text-blue-300"
+          >
+            GitHub
+          </a>
+        </div>
+        <div className="text-sm mt-1">
+            A React Native app for writing notes. 
+            Uses SQLite for local data storage and offline access. 
+        </div>
+      </div>
     </div>
   ),
 
