@@ -24,7 +24,8 @@ export default function Command({ terminalRef }: CommandProps) {
     "contact",
     "clear",
     "resume",
-    "whoami"
+    "whoami",
+    "skills"
   ];
 
   useEffect(() => {
