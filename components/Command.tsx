@@ -63,7 +63,7 @@ export default function Command({ terminalRef }: CommandProps) {
 
       if (cmd === "resume") {
         window.open(
-          "https://drive.google.com/file/d/1wTrgNJOu8DzBGSlwzbGZ0D49griZg3He/preview",
+          "/resume.pdf",
           "_blank",
         );
 
