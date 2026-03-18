@@ -26,6 +26,6 @@ jobs:
             
             sudo docker rm -f portfolio || true
             
-            sudo docker run -d -p 3000:3000 --name portfolio --restart unless-stopped terminal-portfolio
+            sudo docker run -d -p 3000:3000 --name portfolio --restart unless-stopped terminal-portfolio:latest
 
             sudo docker image prune -f
