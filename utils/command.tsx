@@ -48,7 +48,7 @@ export const commands: Record<string, ReactNode> = {
       </p>
     </div>
   ),
-
+  //  skills 
 skills: (
     <div className="space-y-4 my-6 text-[#CBD5E1]">
       <ListItem 
