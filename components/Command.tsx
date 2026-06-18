@@ -18,6 +18,7 @@ export default function Command({ terminalRef }: CommandProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const availableCommands = [
+    "ls",
     "help",
     "about",
     "projects",

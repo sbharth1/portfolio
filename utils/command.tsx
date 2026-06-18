@@ -21,21 +21,23 @@ const ListItem = ({icon, label, value }: {icon?:ReactNode, label: string; value:
   </div>
 );
 
+const HelpOutput = (
+  <div className="space-y-4 my-6">
+    <div className="text-yellow-400 text mb-6 font-bold">Available commands:</div>
+    <HelpItem cmd="about" desc="Read a little bit about me" />
+    <HelpItem cmd="clear" desc="Clear the terminal output" />
+    <HelpItem cmd="contact" desc="Get my email and social links" />
+    <HelpItem cmd="projects" desc="View my recent development projects" />
+    <HelpItem cmd="resume" desc="Download my resume (PDF)" />
+    <HelpItem cmd="skills" desc="List of my technical skills and stack" />
+    <HelpItem cmd="whoami" desc="Print the current user" />
+    <p className="mt-3">Tab =&gt; autocompletes the command.</p>
+  </div>
+);
 
 export const commands: Record<string, ReactNode> = {
-  help: (
-    <div className="space-y-4 my-6">
-      <div className="text-yellow-400 text mb-6 font-bold">Available commands:</div>
-      <HelpItem cmd="about" desc="Read a little bit about me" />
-      <HelpItem cmd="clear" desc="Clear the terminal output" />
-      <HelpItem cmd="contact" desc="Get my email and social links" />
-      <HelpItem cmd="projects" desc="View my recent development projects" />
-      <HelpItem cmd="resume" desc="Download my resume (PDF)" />
-      <HelpItem cmd="skills" desc="List of my technical skills and stack" />
-      <HelpItem cmd="whoami" desc="Print the current user" />
-      <p className="mt-3">Tab =&gt; autocompletes the command.</p>
-    </div>
-  ),
+  help: HelpOutput,
+  ls: HelpOutput,
 
   about: (
     <div className="space-y-4 my-6 text-[#CBD5E1]">
@@ -48,8 +50,8 @@ export const commands: Record<string, ReactNode> = {
       </p>
     </div>
   ),
-  //  skills 
-skills: (
+
+  skills: (
     <div className="space-y-4 my-6 text-[#CBD5E1]">
       <ListItem 
         label="Languages" 
@@ -65,11 +67,12 @@ skills: (
       />
       <ListItem
         label="DevOps / OS"
-        value="Linux (Ubuntu), Docker, Kubernetes, AWS (ECS, EC2, Lambda, S3)"
+        value="Linux, Docker, Kubernetes, AWS (ECS, EC2, Lambda, S3), Kafka"
       />
     </div>
   ),
-projects: (
+
+  projects: (
     <div className="space-y-6 my-6 text-[#CBD5E1]">
       <div>
         <div className="text-[#05CE91] font-bold flex items-center gap-2 text-lg">
@@ -120,7 +123,7 @@ projects: (
     </div>
   ),
 
-contact: (
+  contact: (
     <div className="space-y-4 my-6 text-[#CBD5E1]">
       <ListItem
         icon={
