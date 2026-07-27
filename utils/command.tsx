@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 const HelpItem = ({ cmd, desc }: { cmd: string; desc: string }) => (
   <div className="grid grid-cols-[100px_1fr] gap-4" style={{marginTop:6,marginBottom:2}}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useRef, useState, RefObject } from "react";
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { commands } from "@/utils/command";
 
 type HistoryItem = {
@@ -51,10 +51,14 @@ export default function Command({ terminalRef }: CommandProps) {
       if (matchedCommand) {
         setInput(matchedCommand);
       }
+
+      return;
     }
 
     if (e.key === "Enter") {
-      const cmd = input.trim().toLocaleLowerCase();
+      const cmd = input.trim().toLowerCase();
+
+      if (!cmd) return;
 
       if (cmd === "clear") {
         setHistory([]);
@@ -68,8 +72,8 @@ export default function Command({ terminalRef }: CommandProps) {
           "_blank",
         );
 
-        setHistory([
-          ...history,
+        setHistory((currentHistory) => [
+          ...currentHistory,
           {
             command: cmd,
             output: (
@@ -86,9 +90,9 @@ export default function Command({ terminalRef }: CommandProps) {
         return;
       }
 
-      const output = commands[cmd] || ` command not found :- ${input}`;
+      const output = commands[cmd] ?? `command not found: ${cmd}`;
 
-      setHistory([...history, { command: cmd, output }]);
+      setHistory((currentHistory) => [...currentHistory, { command: cmd, output }]);
       setInput("");
     }
   };

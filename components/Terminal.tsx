@@ -27,7 +27,7 @@ export default function Terminal() {
         }
       `}</style>
 
-      <div className="max-full mx-auto pb-10">
+      <div className="max-w-full mx-auto pb-10">
         <Header />
         <Command terminalRef={terminalRef} />
       </div>
